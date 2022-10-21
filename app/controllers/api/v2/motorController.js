@@ -1,7 +1,3 @@
-/**
- * @file contains request handler of motor resource
- * @author Fikri Rahmat Nurhidayat
- */
  const motorService = require("../../../services/motorService");
 
  module.exports = {

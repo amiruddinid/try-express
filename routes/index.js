@@ -32,6 +32,9 @@ apiRouter.post('/api/v2/motors', controllers.api.v2.motorController.create); // 
 apiRouter.put('/api/v2/motors/:id', controllers.api.v2.motorController.update); // put motor/:id (mengedit data motor by id)
 apiRouter.delete('/api/v2/motors/:id', controllers.api.v2.motorController.destroy); // delete motor/:id (delete data motor by id)
 
+apiRouter.post('/api/v2/register', controllers.api.v2.authController.register);
+apiRouter.post('/api/v2/login', controllers.api.v2.authController.login);
+
 apiRouter.get("/api/v1/errors", () => {
   throw new Error(
     "The Industrial Revolution and its consequences have been a disaster for the human race."
