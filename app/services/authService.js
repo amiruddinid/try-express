@@ -58,10 +58,9 @@ module.exports = {
 
         const user = await userRepository.findOne(username);
         if (!user) {
-            res.status(404).json({
+            throw new Error({
                 message: "Email atau username tidak ditemukan"
             });
-            return;
         }
 
         const isPasswordCorrect = await checkPassword(
@@ -70,7 +69,7 @@ module.exports = {
         );
 
         if (!isPasswordCorrect) {
-            res.status(401).json({
+            throw new Error({
                 message: "Password salah!"
             });
             return;
